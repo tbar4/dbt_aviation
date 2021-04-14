@@ -41,3 +41,80 @@ sources:
                               description: airport IATA ident
                               tests:
                                       - not_null 
+                  
+                  - name: countries
+                    description: A list of IATA country codes
+                    columns: 
+                            - name: id
+                              description: country id
+                              tests:
+                                      - unique
+                                      - not_null
+
+                            - name: code
+                              description: country IATA code
+                              tests:
+                                      - not_null 
+                  
+                  - name: flights_2015
+                    description: A list of flights from 2015
+                    columns: 
+                            - name: airline
+                              description: airline code
+
+                            - name: flight_number
+                              description: registered flight number
+                  
+                  - name: metars
+                    description: METAR observations for large us airportsi
+                    loaded_at_field: observation_time
+                    freshness:
+                            warn_after:
+                                    count: 36
+                                    period: hour 
+                    columns: 
+                            - name: station_id
+                              description: IATA airport id
+
+                            - name: observation_time
+                              description: UTC Datetime of the pbservation
+                              tests:
+                                      - not_null 
+                  
+                  - name: navaids
+                    description: A list of navaids
+                    columns: 
+                            - name: id
+                              description: airport ID
+                              tests:
+                                      - unique
+                                      - not_null
+
+                  - name: ntsb_accidents
+                    description: NTSB accidents
+                    columns: 
+                            - name: accident_number
+                              description: the unique identifier for the ntsb accident
+                              tests:
+                                      - unique
+                                      - not_null
+
+                  - name: regions
+                    description: A list of regions
+                    columns: 
+                            - name: id
+                              description: region ID
+                              tests:
+                                      - unique
+                                      - not_null
+
+
+                  - name: runways
+                    description: A list of runways
+                    columns: 
+                            - name: id
+                              description: runway ID
+                              tests:
+                                      - unique
+                                      - not_null
+
