@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+        - name: aviation
+          database: datadazed
+          tables:
+                  - name: airlines
+                    description: A list of airlines and their codes
+                    columns:
+                            - name: code
+                              description: IATA code of the airline
+                              tests:
+                                      - unique
+                                      - not_null
+
+                            - name: airline
+                              description: Airline name
+                              tests: 
+                                      - unique
+                                      - not_null
+                 
+                  - name: airport_frequencies
+                    description: A list of airport frequencies
+                    columns: 
+                            - name: id
+                              decription: airports id
+                              tests:
+                                      - unique
+                                      - not_null
+                  
+                  - name: airports
+                    description: A list of airports
+                    columns: 
+                            - name: id
+                              description: airport ID
+                              tests:
+                                      - unique
+                                      - not_null
+
+                            - name: ident
+                              description: airport IATA ident
+                              tests:
+                                      - not_null 
