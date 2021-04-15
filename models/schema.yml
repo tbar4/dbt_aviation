@@ -1,8 +1,8 @@
 version: 2
 
-models: 
+models:
   - name: stg_us_large_airports
-    columns: 
+    columns:
       - name: id
         description: id of airport
         tests:
@@ -13,3 +13,5 @@ models:
         tests:
                 - unique
                 - not_null
+
+  - name: list_top_freq__pivot
