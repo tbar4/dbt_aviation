@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_us_large_airports
+    columns:
+      - name: id
+        description: id of airport
+        tests:
+                - unique
+                - not_null
+      - name: ident
+        description: IATA ident of airport
+        tests:
+                - unique
+                - not_null
+
+  - name: list_top_freq__pivot
+    columns:
+      - name: airport_ident
+        description: airport IATA identifier
+        tests:
+                - unique
+                - not_null
