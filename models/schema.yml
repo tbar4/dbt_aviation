@@ -15,3 +15,9 @@ models:
                 - not_null
 
   - name: list_top_freq__pivot
+    columns:
+      - name: airport_ident
+        description: airport IATA identifier
+        tests:
+                - unique
+                - not_null
