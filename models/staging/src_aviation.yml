@@ -66,20 +66,21 @@ sources:
                               description: registered flight number
                   
                   - name: metars
-                    description: METAR observations for large us airportsi
+                    description: '{{ doc("src_aviation_metars")  }}'
                     loaded_at_field: observation_time
                     freshness:
                             warn_after:
                                     count: 36
                                     period: hour 
                     columns: 
+                            - name: raw_text
+                              description: '{{ doc("src_aviation_metars_raw_text") }}'
                             - name: station_id
-                              description: IATA airport id
-
+                              description: '{{ doc("src_aviation_metars_station_id") }}'
                             - name: observation_time
-                              description: UTC Datetime of the pbservation
+                              description: '{{ doc("src_aviation_metars_observation_time") }}'
                               tests:
-                                      - not_null 
+                                      - not_null
                   
                   - name: navaids
                     description: A list of navaids
